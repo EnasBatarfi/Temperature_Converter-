@@ -35,32 +35,31 @@ class TemperatureConverter
                 // Check if the input array contains exactly 2 elements (value and unit).
                 if (temperatureInput.Length != 2)
                 {
-                    Console.WriteLine("Invalid input. Please enter temperature value and unit separated by space.");
+                    Console.WriteLine("Invalid input. Please enter temperature value and unit separated by space...\n");
                     continue;
                 }
 
                 // Check if the value element can be converted into a double.
                 if (!double.TryParse(temperatureInput[0], out double tempValue))
                 {
-                    Console.WriteLine("Invalid value. Please enter a valid number for temperature value.");
+                    Console.WriteLine("Invalid value. Please enter a valid number for temperature value...\n");
                     continue;
                 }
 
                 // Check if the unit element is 'c' (Celsius) or 'f' (Fahrenheit).
                 if (temperatureInput[1] != "c" && temperatureInput[1] != "f")
                 {
-                    Console.WriteLine("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.");
+                    Console.WriteLine("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit...\n");
                     continue;
                 }
 
                 // Create a Temperature object to handle temperature conversion. 
                 Temperature temperature = new Temperature(tempValue, temperatureInput[1]);
                 // Call the ConvertTemperature method to obtain the converted temperature value.
-                double convertedTemp = temperature.ConvertTemperature();
+                double convertedTemp = temperature.TempConvert();
 
                 // Format and display the converted temperature.
-                Console.WriteLine($"Converted temperature: {convertedTemp:F2} {(temperature.GetTempUnit() == "c" ? "F" : "C")}");
-                Console.WriteLine("---------------------------------------------------------");
+                Console.WriteLine($"Converted temperature: {convertedTemp:F2} {(temperature.GetTempUnit() == "c" ? "F" : "C")}\n");
 
             }
         }

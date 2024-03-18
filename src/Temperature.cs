@@ -44,7 +44,7 @@ public class Temperature
     }
 
     // Method to convert temperature from one unit to another
-    public double ConvertTemperature()
+    public double TempConvert()
     {
         double result;
         // Convert Celsius to Fahrenheit if the unit is Celsius
